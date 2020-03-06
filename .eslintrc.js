@@ -1,12 +1,34 @@
 module.exports = {
   root: true,
+  env: {
+    browser: true,
+    es6: true,
+  },
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint", "react", "jest"],
+  globals: {
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly",
+  },
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: "module",
+  },
+  rules: {
+    "prettier/prettier": "error",
+    indent: ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    quotes: ["error", "single"],
+    semi: ["error", "always"],
+  },
+  plugins: ["@typescript-eslint", "prettier", "react", "jest"],
   extends: [
-    "prettier",
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
     "plugin:react/recommended",
     "plugin:jest/recommended",
   ],
