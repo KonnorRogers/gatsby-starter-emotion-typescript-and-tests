@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
   env: {
+    node: true,
     browser: true,
     es6: true,
   },
@@ -20,8 +21,10 @@ module.exports = {
     "prettier/prettier": "error",
     indent: ["error", 2],
     "linebreak-style": ["error", "unix"],
-    quotes: ["error", "single"],
-    semi: ["error", "always"],
+    camelcase: "off",
+    "@typescript-eslint/camelcase": ["error", { properties: "never" }],
+    // quotes: ["error", "single"],
+    // semi: ["error", "always"],
   },
   plugins: ["@typescript-eslint", "prettier", "react", "jest"],
   extends: [
@@ -31,4 +34,9 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:jest/recommended",
   ],
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
 }
