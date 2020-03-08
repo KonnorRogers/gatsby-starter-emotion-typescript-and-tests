@@ -23,8 +23,6 @@ module.exports = {
     "linebreak-style": ["error", "unix"],
     camelcase: "off",
     "@typescript-eslint/camelcase": ["error", { properties: "never" }],
-    // quotes: ["error", "single"],
-    // semi: ["error", "always"],
   },
   plugins: ["@typescript-eslint", "prettier", "react", "jest"],
   extends: [
