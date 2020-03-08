@@ -23,6 +23,7 @@ module.exports = {
     "linebreak-style": ["error", "unix"],
     camelcase: "off",
     "@typescript-eslint/camelcase": ["error", { properties: "never" }],
+    "react/prop-types": "off",
   },
   plugins: ["@typescript-eslint", "prettier", "react"], // "jest"],
   extends: [
@@ -37,4 +38,4 @@ module.exports = {
       version: "detect",
     },
   },
-}
+};
