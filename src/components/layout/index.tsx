@@ -8,9 +8,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
+import { Global, css } from "@emotion/core";
 
 import Header from "../header";
-import "./layout.css";
+import * as styles from "./styles";
 
 interface Props {
   children: React.ReactNode;
@@ -29,6 +30,7 @@ const Layout: React.FC<Props> = ({ children }) => {
 
   return (
     <>
+      <Global styles={styles.layout} />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
