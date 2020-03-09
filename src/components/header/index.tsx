@@ -1,32 +1,17 @@
 import { Link } from "gatsby";
 import React from "react";
 
+import * as styles from "./styles";
+
 interface Props {
   siteTitle?: string;
 }
 
 const Header: React.FC<Props> = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+  <header css={styles.header}>
+    <div css={styles.div}>
+      <h1 css={styles.h1}>
+        <Link to="/" css={styles.link}>
           {siteTitle}
         </Link>
       </h1>
