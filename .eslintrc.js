@@ -25,7 +25,7 @@ module.exports = {
     "@typescript-eslint/camelcase": ["error", { properties: "never" }],
     "react/prop-types": "off",
   },
-  plugins: ["@typescript-eslint", "prettier", "react"], // "jest"],
+  plugins: ["@typescript-eslint", "prettier", "react", "jest"],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
