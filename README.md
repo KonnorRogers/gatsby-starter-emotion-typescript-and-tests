@@ -1,4 +1,3 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
@@ -15,10 +14,12 @@ typescript, emotion, and jest / react-testing-library as well as Cypress.
 
 ## Features
 
-Aliased module imports:
+### Aliased module imports:
 
-- import x from "\$" => import x from "./src"
-- import x from "\$components" => import x from "./src/components"
-- import x from "\$styles" => import x from "./src/styles"
+- `import x from "$"` => `import x from "./src"`
+- `import x from "$components"` => `import x from "./src/components"`
+- `import x from "$styles"` => `import x from "./src/styles"`
 
-Typescript w/ tsconfig.json by default
+### Typescript by default
+
+### CSS-in-JS using Emotion
