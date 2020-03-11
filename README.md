@@ -23,3 +23,5 @@ typescript, emotion, and jest / react-testing-library as well as Cypress.
 ### Typescript by default
 
 ### CSS-in-JS using Emotion
+
+### Testing via Jest / React-Testing-Library-Cypress
