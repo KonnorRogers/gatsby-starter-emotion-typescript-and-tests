@@ -5,10 +5,12 @@ import * as styles from "./styles";
 
 interface Props {
   siteTitle?: string;
-  attrs?: any;
 }
 
-const Header: React.FC<Props> = ({ siteTitle, ...attrs }) => (
+const Header: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
+  siteTitle,
+  ...attrs
+}) => (
   <header css={styles.header} {...attrs}>
     <div css={styles.div}>
       <h1 css={styles.h1}>

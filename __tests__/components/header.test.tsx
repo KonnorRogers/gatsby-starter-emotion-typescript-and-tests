@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Header from "~components/header";
+import Header from "~/components/header";
 
 describe("Unit testing", () => {
   test("Should render a header with the given testid", () => {
