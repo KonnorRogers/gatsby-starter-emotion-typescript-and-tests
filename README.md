@@ -58,7 +58,7 @@ For a further list of commands, check out the `package.json` file.
 ## Adding routes
 
 Routes are handled the same way as they are in the gatsby default starter. Simply
-create a file in the ``
+create a file in the `src/pages` directory.
 
 ## Features
 
