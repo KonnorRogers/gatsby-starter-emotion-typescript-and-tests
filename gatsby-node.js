@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 
-import path from "path";
+const path = require("path");
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
