@@ -3,14 +3,11 @@ import React from "react";
 
 import * as styles from "./styles";
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLElement> {
   siteTitle?: string;
 }
 
-const Header: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({
-  siteTitle,
-  ...attrs
-}) => (
+const Header: React.FC<Props> = ({ siteTitle, ...attrs }) => (
   <header css={styles.header} {...attrs}>
     <div css={styles.div}>
       <h1 css={styles.h1}>
