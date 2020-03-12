@@ -1,0 +1,23 @@
+FROM node:12.14.0-slim
+
+RUN apt update && apt upgrade -y && \
+    apt install gcc g++ make python git libc6-dev build-essential libpng-dev \
+    libjpeg-dev libvips-dev libvips musl-dev node-gyp pngquant webp \
+    libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 \
+    libasound2 libxtst6 xauth xvfb -y
+
+RUN yarn global add gatsby-cli
+
+WORKDIR /myapp
+COPY ./package.json .
+COPY ./yarn.lock .
+
+# Regen node_modules
+RUN rm -rf node_modules .cache
+
+# The port gatsby runs on
+EXPOSE 8000
+
+RUN yarn install && yarn cache clean
+COPY . .
+CMD ["gatsby", "develop", "-H", "0.0.0.0" ]
