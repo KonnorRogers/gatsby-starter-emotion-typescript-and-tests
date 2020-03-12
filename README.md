@@ -17,6 +17,7 @@ I also wanted to keep it as close to the original gatsby starter as possible.
 ## Prerequisites
 
 - Node 12.13 (I have only tested this on 12.13, it could definitely work on lower versions)
+- Docker / Docker-Compose (Optional)
 
 ## Getting Started
 
