@@ -55,6 +55,11 @@ npm run test
 
 For a further list of commands, check out the `package.json` file.
 
+## Adding routes
+
+Routes are handled the same way as they are in the gatsby default starter. Simply
+create a file in the ``
+
 ## Features
 
 ### Aliased module imports:
@@ -84,3 +89,4 @@ Default `Dockerfile` and `docker-compose.yml` included
 ### Roadmap
 
 - [ ] Adding Cypress
+- [ ] Add more detail to the readme as to capabilities.
