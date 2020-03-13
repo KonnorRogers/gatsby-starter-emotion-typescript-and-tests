@@ -13,6 +13,20 @@ import Img from "gatsby-image";
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+// type Data = {
+//  data: {
+//    placeholderImage: {
+//      childImageSharp: {
+//        fluid: string;
+//      };
+//    };
+//  };
+// };
+
+// export const PureImage: React.FC<Data> = ({ data }) => {
+//  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+// };
+
 const Image: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {

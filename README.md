@@ -62,15 +62,17 @@ create a file in the `src/pages` directory.
 
 ## Features
 
-### Aliased module imports:
+### Aliased module imports
 
-- `import x from "$"` => `import x from "./src"`
-- `import x from "$components"` => `import x from "./src/components"`
-- `import x from "$styles"` => `import x from "./src/styles"`
+- `import x from "~"` => `import x from "./src"`
+- `import x from "~components"` => `import x from "./src/components"`
 
 ### Typescript by default
 
 All components are `.tsx` files by default
+
+<br />
+
 Pages are written as `.tsx` files.
 
 ### CSS-in-JS using Emotion
