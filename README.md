@@ -92,3 +92,6 @@ Default `Dockerfile` and `docker-compose.yml` included
 
 - [ ] Adding Cypress
 - [ ] Add more detail to the readme as to capabilities.
+- [ ] Finish unit testing of components
+- [ ] Add integration tests
+- [ ] Add E2E testing
