@@ -70,6 +70,9 @@ create a file in the `src/pages` directory.
 ### Typescript by default
 
 All components are `.tsx` files by default
+
+<br />
+
 Pages are written as `.tsx` files.
 
 ### CSS-in-JS using Emotion
