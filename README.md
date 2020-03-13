@@ -62,11 +62,10 @@ create a file in the `src/pages` directory.
 
 ## Features
 
-### Aliased module imports:
+### Aliased module imports
 
 - `import x from "$"` => `import x from "./src"`
 - `import x from "$components"` => `import x from "./src/components"`
-- `import x from "$styles"` => `import x from "./src/styles"`
 
 ### Typescript by default
 
