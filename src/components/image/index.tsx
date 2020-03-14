@@ -1,6 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import Img, { FluidObject } from "gatsby-image";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -13,19 +13,19 @@ import Img from "gatsby-image";
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-// type Data = {
-//  data: {
-//    placeholderImage: {
-//      childImageSharp: {
-//        fluid: string;
-//      };
-//    };
-//  };
-// };
+type Data = {
+  data: {
+    placeholderImage: {
+      childImageSharp: {
+        fluid: FluidObject;
+      };
+    };
+  };
+};
 
-// export const PureImage: React.FC<Data> = ({ data }) => {
-//  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
-// };
+export const PureImage: React.FC<Data> = ({ data }) => {
+  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+};
 
 const Image: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -40,7 +40,7 @@ const Image: React.FC = () => {
     }
   `);
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+  return <PureImage data={data} />;
 };
 
 export default Image;
