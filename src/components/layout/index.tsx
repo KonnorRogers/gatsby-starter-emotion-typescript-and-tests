@@ -8,16 +8,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import { Global, css } from "@emotion/core";
+import { Global } from "@emotion/core";
 
 import Header from "../header";
 import * as styles from "./styles";
 
-interface Props {
-  children: React.ReactNode;
-}
+export const PureLayout: React.FC = () => {
+  return <div></div>;
+};
 
-const Layout: React.FC<Props> = ({ children }) => {
+const Layout: React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
