@@ -16,7 +16,7 @@ export const PureAstronautImage: React.FC<Data> = ({ data }) => {
   return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
 };
 
-const AstronautImage: React.FC = () => {
+const AstronautImage: React.FC = props => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
@@ -29,7 +29,7 @@ const AstronautImage: React.FC = () => {
     }
   `);
 
-  return <PureAstronautImage data={data} />;
+  return <PureAstronautImage {...props} data={data} />;
 };
 
 export default AstronautImage;
