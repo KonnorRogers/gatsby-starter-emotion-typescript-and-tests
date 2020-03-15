@@ -13,8 +13,7 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "~*": ["src/*"],
-      "~components/*": ["src/components/*"]
+      "~*": ["src/*"]
     }
   },
   "exclude": ["node_modules", "public", ".cache", "gatsby*"]
