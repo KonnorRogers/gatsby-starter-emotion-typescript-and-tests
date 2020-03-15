@@ -10,28 +10,29 @@ import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
 interface Props {
+  title: string;
   description?: string;
   lang?: string;
   meta?: [];
-  title: string;
 }
 
-function SEO({ description, lang, meta, title }: Props): JSX.Element {
-  // const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  );
+interface SiteProps {
+  site: {
+    siteMetadata: {
+      title?: string;
+      description?: string;
+      author?: string;
+    };
+  };
+}
 
+export function PureSEO({
+  site,
+  description,
+  lang,
+  meta,
+  title,
+}: Props & SiteProps): JSX.Element {
   const metaDescription = description || site.siteMetadata.description;
 
   return (
@@ -77,6 +78,25 @@ function SEO({ description, lang, meta, title }: Props): JSX.Element {
       ].concat(meta || [])}
     />
   );
+}
+
+function SEO({ description, lang, meta, title }: Props): JSX.Element {
+  // const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            author
+          }
+        }
+      }
+    `
+  );
+
+  return <PureSEO />;
 }
 
 export default SEO;
