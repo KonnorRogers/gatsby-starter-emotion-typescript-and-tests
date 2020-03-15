@@ -5,7 +5,11 @@ import { PureAstronautImage as AstronautImage } from "~components/astronautImage
 
 describe("AstronautImage", () => {
   test("Should render without error", () => {
-    const image = render(<AstronautImage data={data} />);
-    expect(image).toMatchSnapshot();
+    const { asFragment, getByAltText } = render(
+      <AstronautImage data={data} data-testid="astronaut-image" />
+    );
+
+    expect(getByAltText(/An image of an astronaut/)).toBeTruthy();
+    expect(asFragment).toMatchSnapshot();
   });
 });

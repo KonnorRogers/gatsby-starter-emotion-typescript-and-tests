@@ -12,11 +12,18 @@ type Data = {
   };
 };
 
-export const PureAstronautImage: React.FC<Data> = ({ data }) => {
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+/** Refer to https://www.gatsbyjs.org/packages/gatsby-image/#gatsby-image-props for props */
+export const PureAstronautImage: React.FC<Data> = ({ data, ...attrs }) => {
+  return (
+    <Img
+      fluid={data.placeholderImage.childImageSharp.fluid}
+      alt="An image of an astronaut"
+      {...attrs}
+    />
+  );
 };
 
-const AstronautImage: React.FC = props => {
+const AstronautImage: React.FC = ({ ...attrs }) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
@@ -29,7 +36,7 @@ const AstronautImage: React.FC = props => {
     }
   `);
 
-  return <PureAstronautImage {...props} data={data} />;
+  return <PureAstronautImage data={data} {...attrs} />;
 };
 
 export default AstronautImage;
