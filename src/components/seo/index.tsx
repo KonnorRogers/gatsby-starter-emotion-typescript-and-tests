@@ -80,8 +80,7 @@ export function PureSEO({
   );
 }
 
-function SEO({ description, lang, meta, title }: Props): JSX.Element {
-  // const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
+function SEO(attrs: Props): JSX.Element {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -96,7 +95,7 @@ function SEO({ description, lang, meta, title }: Props): JSX.Element {
     `
   );
 
-  return <PureSEO />;
+  return <PureSEO site={site} {...attrs} />;
 }
 
 export default SEO;
