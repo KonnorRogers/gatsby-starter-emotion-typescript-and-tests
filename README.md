@@ -66,6 +66,7 @@ create a file in the `src/pages` directory.
 
 - `import x from "~"` => `import x from "./src"`
 - `import x from "~components"` => `import x from "./src/components"`
+- `import x from "~fixtures"` => `import x from "./__fixtures__/"`
 
 ### Typescript by default
 
