@@ -13,21 +13,18 @@ import { Global } from "@emotion/core";
 import Header from "../header";
 import * as styles from "./styles";
 
-export const PureLayout: React.FC = () => {
-  return <div></div>;
-};
+interface Props {
+  children?: React.ReactNode;
+  data: {
+    site: {
+      siteMetadata: {
+        title: string;
+      };
+    };
+  };
+}
 
-const Layout: React.FC = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
+export const PureLayout: React.FC<Props> = ({ children, data }) => {
   return (
     <>
       <Global styles={styles.layout} />
@@ -48,6 +45,20 @@ const Layout: React.FC = ({ children }) => {
       </div>
     </>
   );
+};
+
+const Layout: React.FC = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
+  return <PureLayout data={data} children={children} />;
 };
 
 Layout.propTypes = {

@@ -13,8 +13,8 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "~*": ["src/*"],
-      "~fixtures*": ["__fixtures__/*"]
+      "~fixtures*": ["__fixtures__/*"],
+      "~*": ["src/*"]
     }
   },
   "exclude": ["node_modules", "public", ".cache", "gatsby*"]
