@@ -9,14 +9,14 @@ import React from "react";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-interface Props {
+export interface Props {
   title: string;
   description?: string;
   lang?: string;
-  meta?: [];
+  meta?: Array<object>;
 }
 
-interface SiteProps {
+export interface SiteProps {
   site: {
     siteMetadata: {
       title?: string;
