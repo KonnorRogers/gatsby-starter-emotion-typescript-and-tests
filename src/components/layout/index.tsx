@@ -13,15 +13,17 @@ import { Global } from "@emotion/core";
 import Header from "../header";
 import * as styles from "./styles";
 
-export interface Props extends React.HTMLAttributes<HTMLElement> {
-  children?: React.ReactNode;
-  data: {
-    site: {
-      siteMetadata: {
-        title: string;
-      };
+export interface Data {
+  site: {
+    siteMetadata: {
+      title: string;
     };
   };
+}
+
+interface Props extends React.HTMLAttributes<HTMLElement> {
+  children?: React.ReactNode;
+  data: Data;
 }
 
 export const PureLayout: React.FC<Props> = ({ children, data, ...rest }) => {
