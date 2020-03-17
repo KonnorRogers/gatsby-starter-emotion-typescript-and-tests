@@ -530,15 +530,7 @@ export const layout = css`
     margin-bottom: calc(1.45rem / 2);
     margin-top: calc(1.45rem / 2);
   }
-  blockquote *:last-child {
-    margin-bottom: 0;
-  }
-  li *:last-child {
-    margin-bottom: 0;
-  }
-  p *:last-child {
-    margin-bottom: 0;
-  }
+
   li > p {
     margin-bottom: calc(1.45rem / 2);
   }
@@ -582,14 +574,6 @@ export const layout = css`
     padding-right: 0.96667rem;
     padding-top: 0.725rem;
     padding-bottom: calc(0.725rem - 1px);
-  }
-  th:first-child,
-  td:first-child {
-    padding-left: 0;
-  }
-  th:last-child,
-  td:last-child {
-    padding-right: 0;
   }
   tt,
   code {
