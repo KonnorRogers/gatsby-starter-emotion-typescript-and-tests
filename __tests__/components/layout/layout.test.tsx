@@ -6,6 +6,9 @@ import { PureLayout as Layout } from "~components/layout";
 
 describe("Layout component", () => {
   test("Should render without error", () => {
-    const { asFragment, debug } = render(<Layout data={data} />);
+    const { asFragment, debug, getByText, getByTestId } = render(
+      <Layout data={data} data-testid="layout" />
+    );
+    debug();
   });
 });
