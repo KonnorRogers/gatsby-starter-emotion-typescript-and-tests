@@ -13,7 +13,7 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "~fixtures*": ["__fixtures__/*"],
+      "Fixtures/*": ["__fixtures__/*"],
       "~*": ["src/*"]
     }
   },
