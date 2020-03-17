@@ -6,9 +6,12 @@ import { PureLayout as Layout } from "~components/layout";
 
 describe("Layout component", () => {
   test("Should render without error", () => {
-    const { asFragment, debug, getByText, getByTestId } = render(
+    const { asFragment, getByText, getByTestId } = render(
       <Layout data={data} data-testid="layout" />
     );
-    debug();
+
+    expect(getByTestId(/layout/)).toBeTruthy();
+    expect(getByText(/Test Title/)).toBeTruthy();
+    expect(asFragment).toMatchSnapshot();
   });
 });
