@@ -13,7 +13,7 @@ import { Global } from "@emotion/core";
 import Header from "../header";
 import * as styles from "./styles";
 
-interface Props {
+export interface Props extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
   data: {
     site: {
@@ -24,9 +24,9 @@ interface Props {
   };
 }
 
-export const PureLayout: React.FC<Props> = ({ children, data }) => {
+export const PureLayout: React.FC<Props> = ({ children, data, ...rest }) => {
   return (
-    <>
+    <div {...rest}>
       <Global styles={styles.layout} />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
@@ -43,11 +43,11 @@ export const PureLayout: React.FC<Props> = ({ children, data }) => {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
-    </>
+    </div>
   );
 };
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<Props> = ({ children, ...rest }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -58,7 +58,11 @@ const Layout: React.FC = ({ children }) => {
     }
   `);
 
-  return <PureLayout data={data} children={children} />;
+  return (
+    <PureLayout data={data} {...rest}>
+      {children}
+    </PureLayout>
+  );
 };
 
 Layout.propTypes = {
