@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import data from "Fixtures/layout-fixture";
+import data from "~fixtures/layout-fixture";
 import { PureLayout as Layout } from "~components/layout";
 
 describe("Layout component", () => {

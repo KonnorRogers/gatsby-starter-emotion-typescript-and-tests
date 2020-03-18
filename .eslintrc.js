@@ -39,8 +39,8 @@ module.exports = {
     },
     "import/resolver": {
       alias: [
+        ["~fixtures", "./__fixtures__"],
         ["~", "./src/"],
-        ["Fixtures", "./__fixtures__/"],
       ],
     },
   },

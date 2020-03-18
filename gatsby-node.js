@@ -13,7 +13,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     resolve: {
       alias: {
         "~$": path.resolve(__dirname, "src/"),
-        Fixtures: path.resolve(__dirname, "__fixtures__/"),
+        "~fixtures": path.resolve(__dirname, "__fixtures__"),
       },
     },
   });
