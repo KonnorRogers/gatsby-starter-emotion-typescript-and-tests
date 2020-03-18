@@ -1,20 +1,14 @@
 import * as React from "react";
-import { render } from "@testing-library/react";
+import { render, waitForDomChange } from "@testing-library/react";
 import data from "~fixtures/seo-fixture";
 import { PureSEO as SEO } from "~components/seo";
 
 describe("SEO component", () => {
-  test("Should properly render without errors", () => {
-    // const Page = () => {
-    //   <>
-    //     <SEO title={data.title} site={data.site}></SEO>
-    //   </>;
-    // };
+  test("Should properly render without errors", async () => {
+    // https://github.com/testing-library/react-testing-library/issues/402 used to get this testing working
+    render(<SEO title={data.title} site={data.site} />);
+    await waitForDomChange();
 
-    const { asFragment, debug } = render(
-      <SEO title={data.title} site={data.site} />
-    );
-
-    debug();
+    expect(document.querySelector("head")).toMatchSnapshot();
   });
 });

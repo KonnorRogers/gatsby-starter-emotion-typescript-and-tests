@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SEO component Should properly render without errors 1`] = `
+<head>
+  <title>
+    Test Title | Site Title
+  </title>
+  <meta
+    content="My testing site"
+    data-react-helmet="true"
+    name="description"
+  />
+  <meta
+    content="Test Title"
+    data-react-helmet="true"
+    property="og:title"
+  />
+  <meta
+    content="My testing site"
+    data-react-helmet="true"
+    property="og:description"
+  />
+  <meta
+    content="website"
+    data-react-helmet="true"
+    property="og:type"
+  />
+  <meta
+    content="summary"
+    data-react-helmet="true"
+    name="twitter:card"
+  />
+  <meta
+    content="Konnor Rogers"
+    data-react-helmet="true"
+    name="twitter:creator"
+  />
+  <meta
+    content="Test Title"
+    data-react-helmet="true"
+    name="twitter:title"
+  />
+  <meta
+    content="My testing site"
+    data-react-helmet="true"
+    name="twitter:description"
+  />
+</head>
+`;
