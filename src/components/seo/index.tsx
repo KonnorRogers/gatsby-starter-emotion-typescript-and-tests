@@ -6,24 +6,27 @@
  */
 
 import React from "react";
-import Helmet from "react-helmet";
+import Helmet, { HelmetProps } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-export interface SiteProps {
+export type SiteProps = {
   siteMetadata: {
     title: string;
     description: string;
     author: string;
   };
-}
+};
 
-type MetaProps = JSX.IntrinsicElements["meta"];
+export type MetaProps = JSX.IntrinsicElements["meta"];
 
-export interface Props {
+export interface Props extends HelmetProps {
   title?: string;
   description?: string;
   lang?: string;
   meta?: MetaProps[];
+}
+
+export interface PureSEOProps extends Props {
   site: SiteProps;
 }
 
@@ -33,7 +36,7 @@ export const PureSEO = ({
   lang,
   meta,
   title,
-}: Props): JSX.Element => {
+}: PureSEOProps): React.ReactElement<PureSEOProps> => {
   const metaDescription = description || site.siteMetadata.description;
   const metaData: MetaProps[] = meta || [];
 
@@ -84,7 +87,7 @@ export const PureSEO = ({
   );
 };
 
-function SEO({ title, ...attrs }: HelmetProps): JSX.Element {
+function SEO({ title, ...attrs }: Props): React.ReactElement<Props> {
   const site: SiteProps = useStaticQuery(
     graphql`
       query {

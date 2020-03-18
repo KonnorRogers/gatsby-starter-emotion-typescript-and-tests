@@ -1,4 +1,4 @@
-import Data from "~components/layout";
+import { Data } from "~components/layout";
 const data: Data = {
   site: {
     siteMetadata: {

@@ -1,6 +1,14 @@
-import { Props, SiteProps } from "~components/seo";
+import { PureSEOProps, SiteProps } from "~components/seo";
 
-const propData: Props = {
+const siteData: SiteProps = {
+  siteMetadata: {
+    title: "Site Title",
+    description: "My testing site",
+    author: "Konnor Rogers",
+  },
+};
+
+const propData: PureSEOProps = {
   title: "Test Title",
   description: "Test description",
   lang: "en",
@@ -9,15 +17,7 @@ const propData: Props = {
     { content: "nonsense" },
     { charSet: "utf-8" },
   ],
+  site: siteData,
 };
 
-const siteData: SiteProps = {
-  site: {
-    siteMetadata: {
-      title: "Site Title",
-      description,
-    },
-  },
-};
-
-export default data;
+export default propData;
