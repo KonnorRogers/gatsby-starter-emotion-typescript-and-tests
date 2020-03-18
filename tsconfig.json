@@ -5,6 +5,7 @@
     "jsx": "preserve",
     "lib": ["dom", "esnext"],
     "strict": true,
+    "noImplicitAny": true,
     "noEmit": true,
     "skipLibCheck": true,
     "isolatedModules": false,
