@@ -6,7 +6,8 @@
  */
 
 import React from "react";
-import Helmet, { HelmetProps } from "react-helmet";
+import { HelmetProps } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useStaticQuery, graphql } from "gatsby";
 
 export type SiteProps = {
@@ -76,14 +77,16 @@ export const PureSEO = ({
   ];
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={metaTags.concat(metaData)}
-    />
+    <HelmetProvider context={{}}>
+      <Helmet
+        htmlAttributes={{
+          lang,
+        }}
+        title={title}
+        titleTemplate={`%s | ${site.siteMetadata.title}`}
+        meta={metaTags.concat(metaData)}
+      />
+    </HelmetProvider>
   );
 };
 

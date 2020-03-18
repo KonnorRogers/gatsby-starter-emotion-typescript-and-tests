@@ -63,6 +63,10 @@ Routes are handled the same way as they are in the gatsby default starter.
 
 Simply create a file in the `src/pages` directory.
 
+IE:
+
+`src/pages/my-cool-route.tsx` can be navigated via `localhost:8000/my-cool-route`
+
 ## Features
 
 ### Aliased module imports
@@ -85,12 +89,21 @@ Pages are written as `.tsx` files.
 
 ### Testing via Jest / React-Testing-Library / (And later Cypress)
 
-[jestjs.io](jestjs.io)
-[https://testing-library.com/docs/react-testing-library/intro](https://testing-library.com/docs/react-testing-library/intro)
+Jest - [jestjs.io](jestjs.io)
+
+React-Testing-Library - [https://testing-library.com/docs/react-testing-library/intro](https://testing-library.com/docs/react-testing-library/intro)
+
+Cypress - [cypress.io](cypress.io)
 
 ### Docker / Docker-Compose included
 
 Default `Dockerfile` and `docker-compose.yml` included
+
+### Deviations
+
+Gatsby uses [react-helmet](https://github.com/nfl/react-helmet) however, `react-helmet` uses "unsafe component lifecycles". There is a fork of `react-helmet` called [react-helmet-async](https://github.com/staylor/react-helmet-async) which solves the lifecycle method issue.
+
+As a result [src/components/seo/index.tsx](https://github.com/ParamagicDev/gatsby-starter-emotion-typescript-and-tests/blob/master/src/components/seo/index.tsx) uses `react-helmet-async`.
 
 ### Roadmap
 
