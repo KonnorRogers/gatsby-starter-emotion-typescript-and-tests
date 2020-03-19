@@ -11,6 +11,7 @@
   <a href="#table-of-contents">Table of Contents</a>
 </h2>
 
+<div style="font-size: 1.45rem">
 <ul style="font-size: 1.25rem;">
   <li><a href="#purpose">Purpose</a></li>
   <li><a href="#prereqs">Prerequisites</a></li>
@@ -53,6 +54,7 @@
     </ul>
     <li><a href="#roadmap">Roadmap</a></li>
 </ul>
+</div>
 
 <h2 id="purpose">Purpose</h2>
 
