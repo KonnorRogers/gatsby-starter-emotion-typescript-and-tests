@@ -7,42 +7,42 @@ exports[`SEO component Should properly render without errors 1`] = `
   </title>
   <meta
     content="My testing site"
-    data-react-helmet="true"
+    data-rh="true"
     name="description"
   />
   <meta
     content="Test Title"
-    data-react-helmet="true"
+    data-rh="true"
     property="og:title"
   />
   <meta
     content="My testing site"
-    data-react-helmet="true"
+    data-rh="true"
     property="og:description"
   />
   <meta
     content="website"
-    data-react-helmet="true"
+    data-rh="true"
     property="og:type"
   />
   <meta
     content="summary"
-    data-react-helmet="true"
+    data-rh="true"
     name="twitter:card"
   />
   <meta
     content="Konnor Rogers"
-    data-react-helmet="true"
+    data-rh="true"
     name="twitter:creator"
   />
   <meta
     content="Test Title"
-    data-react-helmet="true"
+    data-rh="true"
     name="twitter:title"
   />
   <meta
     content="My testing site"
-    data-react-helmet="true"
+    data-rh="true"
     name="twitter:description"
   />
 </head>
