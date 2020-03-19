@@ -11,43 +11,22 @@
   <a href="#table-of-contents">Table of Contents</a>
 </h2>
 
-<style type="text/css">
-  ul {
-    font-size: 1.3rem;
-  }
-
-  li {
-    font-size: 1.2rem;
-    padding: 0.25rem;
-    outline: blue;
-  }
-
-  a {
-    display: inline-block;
-    padding: 0.2rem 0.5rem;
-  }
-
-  a:hover {
-    box-shadow: 0 0 0 2px rgba(0,0,255,0.15);
-  }
-</style>
-
-<ul style="list-style:none;">
+<ul style="font-size: 1.25rem;">
   <li><a href="#purpose">Purpose</a></li>
   <li><a href="#prereqs">Prerequisites</a></li>
   <li><a href="#getting-started">Getting Started</a></li>
-    <ul style="list-style:none;">
+    <ul>
       <li><a href="#docker">With Docker / Docker-Compose</a></li>
       <li><a href="#no-docker">Without Docker</a></li>
       <li><a href="#commands">Commands</a></li>
-      <ul style="list-style:none;">
+      <ul>
         <li><a href="#jest-commands">Jest Commands</a></li>
         <li><a href="#cypress-commands">Cypress Commands</a></li>
       </ul>
       <li><a href="#routes">Adding Routes</a></li>
     </ul>
   <li><a href="#features"> Features </a></li>
-    <ul style="list-style: none;">
+    <ul>
       <li><a href="#aliases">Aliased Module Imports</a></li>
       <li><a href="#typescript">Typescript by Default</a></li>
       <li><a href="#css-in-js">CSS-in-JS (Emotion)</a></li>
@@ -55,16 +34,16 @@
       <li><a href="#dockerfile">Dockerfile & docker-compose.yml included</a></li>
     </ul>
   <li><a href="#deviations"> Deviations </a></li>
-    <ul style="list-style:none;">
+    <ul>
       <li><a href="#react-helmet">React Helmet Async </a></li>
       <li><a href="#changing-aliases"> Changing Aliases </a></li>
-        <ul style="list-style:none;">
+        <ul>
           <li>
             <a href="#alias-modification-process">
               Alias Modification Process
             </a>
           </li>
-          <ul style="list-style:none;">
+          <ul>
             <li><a href="#gatsby-node-js">gatsby-node.js</a></li>
             <li><a href="#tsconfig-json">tsconfig.json</a></li>
             <li><a href="#jest-config-js">jest.config.js</a></li>
