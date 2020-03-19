@@ -31,13 +31,24 @@ module.exports = {
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:jest/recommended",
-    "plugin:cypress/recommended",
+  ],
+  overrides: [
+    // Jest for jest files
+    {
+      files: ["__tests__/**/*.test.{js,ts}"],
+      extends: "plugin:jest/recommended",
+    },
+    // Cypress for cypress files
+    {
+      files: ["cypress/**/*.test.{js,ts}"],
+      extends: "plugin:cypress/recommended",
+    },
   ],
   settings: {
     react: {
       version: "detect",
     },
+    // Aliases
     "import/resolver": {
       alias: [
         ["~fixtures", "./__fixtures__"],
