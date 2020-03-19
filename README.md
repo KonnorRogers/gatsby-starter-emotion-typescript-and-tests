@@ -11,7 +11,7 @@
   <a href="#table-of-contents">Table of Contents</a>
 </h2>
 
-<ul font-size="1.25rem">
+<ul>
   <li><a href="#purpose">Purpose</a></li>
   <li><a href="#prereqs">Prerequisites</a></li>
   <li><a href="#getting-started">Getting Started</a></li>
