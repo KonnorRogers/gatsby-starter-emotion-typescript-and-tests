@@ -55,7 +55,7 @@ npm run test
 
 For a further list of commands, check out the `package.json` file.
 
-## Adding routes
+### Adding routes
 
 Routes are handled the same way as they are in the gatsby default starter.
 
@@ -103,12 +103,151 @@ Default `Dockerfile` and `docker-compose.yml` included
 
 Gatsby uses [react-helmet](https://github.com/nfl/react-helmet) however, `react-helmet` uses "unsafe component lifecycles". There is a fork of `react-helmet` called [react-helmet-async](https://github.com/staylor/react-helmet-async) which solves the lifecycle method issue.
 
-As a result [src/components/seo/index.tsx](https://github.com/ParamagicDev/gatsby-starter-emotion-typescript-and-tests/blob/master/src/components/seo/index.tsx) uses `react-helmet-async`.
+As a result, [src/components/seo/index.tsx](https://github.com/ParamagicDev/gatsby-starter-emotion-typescript-and-tests/blob/master/src/components/seo/index.tsx) uses `react-helmet-async`.
 
-### Roadmap
+### Changing Aliases
 
-- [ ] Adding Cypress
-- [ ] Add more detail to the readme as to capabilities.
-- [ ] Finish unit testing of components
-- [ ] Add integration tests
+To change an alias is quite a process. You must change 4 files:
+
+`gatsby-node.js`
+
+`tsconfig.json`
+
+`jest.config.js`
+
+`eslintrc.js`
+
+Explanation:
+
+`gatsby-node.js` will affect how gatsby aliases imports. If this is not set,
+Gatsby itself will throw an error about being unable to find the import.
+
+`tsconfig.json` tells the typescript compiler where to find an aliased module. If
+this is not set properly, the typescript compiler will throw an error.
+
+`jest.config.js` The moduleNameMapper API tells Jest where to import modules from
+inside of your testing environment. If this is not set properly, jest will throw
+an error inside of your tests.
+
+`eslintrc.js` I have installed 2 packages:
+
+[eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
+
+and
+
+[eslint-import-resolver-alias](https://github.com/johvin/eslint-import-resolver-alias#readme)
+
+Both of the above are installed when you run `npm install`. These 2 plugins,
+combined with the aliases I have already mapped in `.eslintrc.js` allow you to be able
+have autocomplete in your text editor of choice if it integrates with eslint.
+
+<br />
+
+#### Modifying aliases
+
+Here is how the modifications would take place:
+
+<br />
+
+##### [gatsby-node.js](https://github.com/ParamagicDev/gatsby-starter-emotion-typescript-and-tests/blob/master/gatsby-node.js)
+
+```js
+// gatsby-node.js
+const path = require("path");
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        // Aliased paths go here
+        "~$": path.resolve(__dirname, "src/"),
+        "~fixtures": path.resolve(__dirname, "__fixtures__"),
+      },
+    },
+  });
+};
+```
+
+Further reading on gatsby-node aliased paths can be found here:
+
+[https://www.gatsbyjs.org/docs/api-files-gatsby-node/](https://www.gatsbyjs.org/docs/api-files-gatsby-node/)
+
+<br />
+
+##### [tsconfig.json](https://github.com/ParamagicDev/gatsby-starter-emotion-typescript-and-tests/blob/master/tsconfig.json)
+
+```json
+// tsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~fixtures/*": ["__fixtures__/*"],
+      "~*": ["src/*"]
+    }
+  }
+}
+```
+
+`"paths"` is where you would place your aliases.
+
+Further reading on tsconfig.json can be found here:
+
+[https://www.typescriptlang.org/docs/handbook/module-resolution.html](https://www.typescriptlang.org/docs/handbook/module-resolution.html)
+
+<br />
+
+##### [jest.config.js](https://github.com/ParamagicDev/gatsby-starter-emotion-typescript-and-tests/blob/master/jest.config.js)
+
+```js
+// jest.config.js
+module.exports = {
+  // ...
+  moduleNameMapper: {
+    // ...
+    // Your aliases here
+    "~fixtures(.*)": "<rootDir>/__fixtures__$1",
+    "~(.*)$": "<rootDir>/src/$1",
+  },
+  // ...
+};
+```
+
+Further reading on Jest module name mapping can be found here:
+
+[https://jestjs.io/docs/en/configuration#modulenamemapper-objectstring-string](https://jestjs.io/docs/en/configuration#modulenamemapper-objectstring-string)
+
+<br />
+
+##### [.eslintrc.js](https://github.com/ParamagicDev/gatsby-starter-emotion-typescript-and-tests/blob/master/.eslintrc.js)
+
+```js
+// .eslintrc.js
+module.exports = {
+  // ...
+  settings: {
+    // ...
+    "import/resolver": {
+      // Aliases go here
+      alias: [
+        ["~fixtures", "./__fixtures__"],
+        ["~", "./src/"],
+      ],
+    },
+  },
+  // ...
+};
+```
+
+Further reading about how ESLint handles import can be found here:
+
+[https://github.com/johvin/eslint-import-resolver-alias#readme](https://github.com/johvin/eslint-import-resolver-alias#readme)
+
+<br />
+
+## Roadmap
+
+- [ ] Add Cypress
+- [x] Add more detail to the readme as to capabilities.
+- [x] Finish unit testing of components
 - [ ] Add E2E testing
