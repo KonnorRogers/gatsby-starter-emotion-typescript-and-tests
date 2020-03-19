@@ -24,6 +24,7 @@
     "react-helmet-async": "^1.0.4"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^6.0.0",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.5.0",
     "@types/jest": "^25.1.4",
@@ -33,12 +34,15 @@
     "@types/react-helmet": "^5.0.15",
     "@typescript-eslint/eslint-plugin": "^2.23.0",
     "@typescript-eslint/parser": "^2.23.0",
+    "axe-core": "^3.5.2",
     "babel-jest": "^25.1.0",
     "babel-plugin-emotion": "^10.0.29",
     "babel-preset-gatsby": "^0.2.35",
     "cypress": "^4.2.0",
+    "cypress-axe": "^0.5.3",
     "eslint": "^6.8.0",
     "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-cypress": "^2.10.3",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-prettier": "^3.1.2",
@@ -73,7 +77,9 @@
     "test:watch": "jest --watch",
     "test:watchAll": "jest --watchAll",
     "cy:open": "cypress open",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
+    "cy:run": "cypress run",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run"
   },
   "repository": {
     "type": "git",

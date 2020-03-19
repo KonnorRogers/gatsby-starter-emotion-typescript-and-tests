@@ -32,6 +32,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:jest/recommended",
+    "plugin:cypress/recommended",
   ],
   settings: {
     react: {
